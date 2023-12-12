@@ -8,8 +8,7 @@ describe('Working with login',()=>{
           cy.get('[data-test="username"]').type(username);
           cy.get('[data-test="password"]').type(sauceusers.password);
           cy.get('[data-test="login-button"]').click();
-          // cy.clearCookies();
-          // cy.clearLocalStorage();
+       
           cy.visit('https://www.saucedemo.com/', { timeout: 10000 });
          
       });

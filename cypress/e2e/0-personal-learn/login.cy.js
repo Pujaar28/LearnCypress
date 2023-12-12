@@ -25,14 +25,12 @@ describe('Working with inputs',()=>{
     it('Should try to login', () => {
         cy.fixture("sauceusers").then(sauceusers=>{
             cy.visit('zero.webappsecurity.com/login.html')
+            cy.get('.btn').click()
+             cy.get('.alert').should('contain.text','Login and/or password are wrong.')
             const username = sauceusers.username
             const password = sauceusers.password
-
-            cy.get('#user_login').clear()
-            cy.get('#user_login').type('username')
-            cy.get('input[name="user_password"]').clear()
-            cy.get('input[name="user_password"]').type('password')
-            cy.get('.btn').click()
+            cy.login(username,password)
+           
         })
     });
 })
