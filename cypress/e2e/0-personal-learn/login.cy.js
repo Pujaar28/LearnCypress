@@ -23,10 +23,10 @@ describe('Working with inputs',()=>{
     });
 
     it('Should try to login', () => {
-        cy.fixture("saucedemouser").then(saucedemouser=>{
+        cy.fixture("sauceusers").then(sauceusers=>{
             cy.visit('zero.webappsecurity.com/login.html')
-            const username = saucedemouser.username
-            const password = saucedemouser.password
+            const username = sauceusers.username
+            const password = sauceusers.password
 
             cy.get('#user_login').clear()
             cy.get('#user_login').type('username')
